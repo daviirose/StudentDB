@@ -41,8 +41,8 @@ public class Student { // Public class "Students" holding its variables
 	// Get inside a loop, user hits 0
 		do {
 			System.out.print("Enter course to enroll (Q to quit): "); // Outputs/prints the string
-			Scanner in = new Scanner(System.in); // Scanner.in declares 'in' as an object, Input will be given to the system
-			String course = in.nextLine(); // Passes in the string value to the nextLine
+			Scanner in = new Scanner(System.in); // Receives input 
+			String course = in.nextLine(); // The string course will expect an input
 			if (!course.equals("Q")) { // If you don't Quit do the following
 				courses = courses + "\n  " + course; // courses will equal all the courses you chose
 				balanceOfTuition = balanceOfTuition + costOfClass;
@@ -60,7 +60,7 @@ public class Student { // Public class "Students" holding its variables
 	}
 	
 // Pay tuition
-	public void payTuition() { // Public class
+	public void tuitionPayment() { // Public class
 		viewBalance(); // Your balance before payment
 		System.out.println("Enter Your Payment: $ "); // Outputs the string
 		Scanner in = new Scanner(System.in); // Receive input or simply inputting a value in console
