@@ -51,18 +51,27 @@ public class Student { // Public class "Students" holding its variables
 		
 		}
 		else { // If you Q this will run
-			System.out.println("Break!");
 			break; }	
 	}	while (1 != 0); // While 1 is not equal to 0, forever
 			
 		System.out.println("ENROLLED IN: " + courses); // print the courses variable and its value
-		System.out.println("TUITION BALANCE: " + balanceOfTuition);// print the balanceOfTuition variable and its value
-		
 	}
 
 // View  balance 
+	public void viewBalance( ) { // Public class
+		System.out.println("Your balance is: $" + balanceOfTuition); // Outputs the string plus tuition balance
+	}
 	
 // Pay tuition
+	public void payTuition() { // Public class
+		viewBalance(); // Your balance before payment
+		System.out.println("Enter Your Payment: $"); // Outputs the string
+		Scanner in = new Scanner(System.in); // Receive input or simply inputting a value in console
+		int payment = in.nextInt(); // Scans the next token of the input as an integer
+		balanceOfTuition = balanceOfTuition - payment; // Subtracts tuition balance and payment
+		System.out.println("Thank you for your payment of $"); // Outputs a string
+		viewBalance(); // Your balance after payment
+	}
 	
 // Show status
 }
