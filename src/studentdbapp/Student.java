@@ -7,7 +7,7 @@ public class Student { // Public class "Students" holding its variables
 	private String lastName;
 	private int gradeLevel;
 	private String studentID;
-	private String courses = null;
+	private String courses = "";
 	private int balanceOfTuition = 0;
 	private static int costOfClass = 400;
 	private static int id = 1000; 
@@ -26,8 +26,6 @@ public class Student { // Public class "Students" holding its variables
 		this.gradeLevel = in.nextInt(); // "gradeLevel" value will be output as an object in the nextLine
 		
 		setStuID(); // Brings-in/outputs the function in this private class
-		
-		System.out.println(firstName + " " + lastName + " " + gradeLevel + " " + studentID); // Prints all inputs 
 	
 	}
 	
@@ -46,7 +44,7 @@ public class Student { // Public class "Students" holding its variables
 			Scanner in = new Scanner(System.in); // Scanner.in declares 'in' as an object, Input will be given to the system
 			String course = in.nextLine(); // Passes in the string value to the nextLine
 			if (!course.equals("Q")) { // If you don't Quit do the following
-				courses = courses + "\n" + course; // courses will equal all the courses you chose
+				courses = courses + "\n  " + course; // courses will equal all the courses you chose
 				balanceOfTuition = balanceOfTuition + costOfClass;
 		
 		}
@@ -54,7 +52,6 @@ public class Student { // Public class "Students" holding its variables
 			break; }	
 	}	while (1 != 0); // While 1 is not equal to 0, forever
 			
-		System.out.println("ENROLLED IN: " + courses); // print the courses variable and its value
 	}
 
 // View  balance 
@@ -65,13 +62,20 @@ public class Student { // Public class "Students" holding its variables
 // Pay tuition
 	public void payTuition() { // Public class
 		viewBalance(); // Your balance before payment
-		System.out.println("Enter Your Payment: $"); // Outputs the string
+		System.out.println("Enter Your Payment: $ "); // Outputs the string
 		Scanner in = new Scanner(System.in); // Receive input or simply inputting a value in console
 		int payment = in.nextInt(); // Scans the next token of the input as an integer
 		balanceOfTuition = balanceOfTuition - payment; // Subtracts tuition balance and payment
-		System.out.println("Thank you for your payment of $"); // Outputs a string
+		System.out.println("Thank you for your payment of $" + payment); // Outputs a string
 		viewBalance(); // Your balance after payment
 	}
 	
 // Show status
+	public String showInfo() { // Returns a string
+		return "Name: " + firstName + " " + lastName +
+				"\nGrade Level: " + gradeLevel +
+				"\nStudent ID: " + studentID +
+				"\nEnrolled in: " + courses +
+				"\nBalance: $" + balanceOfTuition; // Returns all the variables listed
+	}
 }
