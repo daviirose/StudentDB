@@ -2,28 +2,28 @@ package studentdbapp;
 
 import java.util.Scanner;
 
-public class Student { // Public class "Students" holding its variables
+public class Student { // Public class "Student" holding its variables
 	private String firstName;
 	private String lastName;
 	private int gradeLevel;
 	private String studentID;
-	private String courses = "";
+	private String courses = ""; // Empty string so it returns courses and not null
 	private int balanceOfTuition = 0;
-	private static int costOfClass = 400;
+	private static int costOfClass = 400; // Static just means it won't change
 	private static int id = 1000; 
 	
 // Constructor which prompts user to enter student's name and year
 	
 	public Student() { // Public class "Student"
-		Scanner in = new Scanner(System.in); // Scanner.in declares 'in' as an object, Input will be given to the system
+		Scanner in = new Scanner(System.in); // Receive input or simply inputting a value in console 
 		System.out.print("Enter Student First name: "); // System is a class, out outputs it, print will print the string
-		this.firstName = in.nextLine(); // "firstName" value will be output as an object in the nextLine
+		this.firstName = in.nextLine(); // Scans the next token and returns the input 
 		
 		System.out.print("Enter Student Last name: "); // System is a class, out outputs it, print will print the string
-		this.lastName = in.nextLine(); // "lastName" value will be output as an object in the nextLine
+		this.lastName = in.nextLine(); // Scans the next token and returns the input 
 		
 		System.out.print("1 - Freshmen\n2 - Sophomore\n3 - Junior\n4 - Senior\nEnter Student Grade Level: "); // Prints out string
-		this.gradeLevel = in.nextInt(); // "gradeLevel" value will be output as an object in the nextLine
+		this.gradeLevel = in.nextInt(); // Scans the next token and returns the input as an integer
 		
 		setStuID(); // Brings-in/outputs the function in this private class
 	
@@ -33,7 +33,7 @@ public class Student { // Public class "Students" holding its variables
 	private void setStuID() { // Private class
 		// Grade level + ID
 		id++; // Increments ID number by 1
-		this.studentID = gradeLevel + "" + id; // StudentID VAR = grave level and an incremented id by 1
+		this.studentID = gradeLevel + "" + id; // StudentID equals grade level and an incremented id by 1
 	}
 	
 // Course enrollment 
@@ -57,7 +57,7 @@ public class Student { // Public class "Students" holding its variables
 // View  balance 
 	public void viewBalance( ) { // Public class
 		System.out.println("Your balance is: $" + balanceOfTuition); // Outputs the string plus tuition balance
-	}
+	} 
 	
 // Pay tuition
 	public void tuitionPayment() { // Public class
@@ -78,4 +78,6 @@ public class Student { // Public class "Students" holding its variables
 				"\nEnrolled in: " + courses +
 				"\nBalance: $" + balanceOfTuition; // Returns all the variables listed
 	}
-}
+}	
+
+
